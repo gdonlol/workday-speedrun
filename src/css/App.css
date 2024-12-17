@@ -201,3 +201,7 @@ a {
   color: #5e6a75;
   font-size: 14px;
 }
+
+.grey-text p {
+  color: #494949;
+}

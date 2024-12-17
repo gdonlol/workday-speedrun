@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export const Joblist = (props: { pageColor: string, icon: string, banner: string, jobTitle: string, jobDesc: string }) => {
+  const fakeId = (Math.random() * 100000).toFixed(0);
   return (
     <div>
       <div className="flex-col flex-aic" style={{ padding: '0px 0px 32px' }}>
@@ -46,7 +48,7 @@ export const Joblist = (props: { pageColor: string, icon: string, banner: string
               <p><u>{props.jobTitle}</u></p>
               <p><i className="fa fa-map-marker" style={{ marginLeft: '0.15em', letterSpacing: '0.15em' }}></i> 7 Locations</p>
               <p><i className="fa fa-clock-o"></i> Posted 30+ Days Ago</p>
-              <p style={{ margin: '0px' }}><small>4951884</small></p>
+              <p style={{ margin: '0px' }}><small>{fakeId}</small></p>
             </div>
             <div className="flex-col flex-aic flex-jcc" style={{ margin: '32px' }}>
               <div className="flex flex-aic flex-jcc" style={{ backgroundColor: 'rgb(0, 113, 206)', width: '30px', height: '30px', borderRadius: '99px' }}>
@@ -59,32 +61,34 @@ export const Joblist = (props: { pageColor: string, icon: string, banner: string
           <div style={{ flex: '1 1 0%', backgroundColor: 'white', height: '100vh' }}>
             <div style={{ maxWidth: '75%', margin: '38px' }}>
               <h1 style={{ fontSize: '24px', margin: '0px 0px 32px', color: 'rgb(51, 51, 51)' }}>2024 Intern Conversion - 2025 FT: Manager, Automation Engineering</h1>
-              <a className="btn blue-btn" style={{ fontWeight: '600', fontSize: '14px', paddingTop: '11px', paddingBottom: '13px', marginTop: '100px' }} href="/" data-discover="true">
+              <Link to="/game/jobform" className="btn blue-btn" style={{ fontWeight: '600', fontSize: '14px', paddingTop: '11px', paddingBottom: '13px', marginTop: '100px' }} href="/" data-discover="true">
                 <span>Apply</span>
-              </a>
+              </Link>
             </div>
             <hr style={{ borderWidth: '0.5px medium medium', borderStyle: 'solid none none', borderColor: 'rgb(218, 222, 226)' }} />
             <div className="flex" style={{ margin: '38px', flex: '1 1 0%', justifyContent: 'space-between' }}>
-              <div className="flex" style={{ flex: '1 1 0%', justifyContent: 'flex-start', gap: '8px' }}>
+              <div className="flex grey-text" style={{ flex: '1 1 0%', justifyContent: 'flex-start', gap: '8px' }}>
                 <p className="flex flex-aic" style={{ gap: '12px', alignSelf: 'flex-start', margin: '0px' }}>
                   <i className="fa fa-map-marker grey-icon" style={{ fontSize: '24px' }}></i> Brampton, ON
                 </p>
               </div>
-              <div className="flex-col" style={{ flex: '1 1 0%', justifyContent: 'flex-start', gap: '8px' }}>
+              <div className="flex-col grey-text" style={{ flex: '1 1 0%', justifyContent: 'flex-start', gap: '8px' }}>
                 <p className="flex flex-aic" style={{ gap: '12px', alignSelf: 'flex-start', margin: '0px' }}>
                   <i className="fa fa-briefcase grey-icon" style={{ fontSize: '24px' }}></i> Full time
                 </p>
                 <p className="flex flex-aic" style={{ gap: '12px', alignSelf: 'flex-start', margin: '0px' }}>
-                  <i className="fa fa-clock-o grey-icon" style={{ fontSize: '24px', marginLeft: '0.05em', letterSpacing: '0.05em' }}></i> Posted 30+ Days Ago
+                  <i className="fa fa-clock-o grey-icon" style={{ fontSize: '24px', marginLeft: '0.05em', letterSpacing: '0.05em' }}></i>
+                  Posted 30+ Days Ago
                 </p>
                 <p className="flex flex-aic" style={{ gap: '12px', alignSelf: 'flex-start', margin: '0px' }}>
-                  <i className="fa fa-file-text-o grey-icon" style={{ fontSize: '24px', marginLeft: '0.05em', letterSpacing: '0.05em' }}></i> Brampton, ON
+                  <i className="fa fa-file-text-o grey-icon" style={{ fontSize: '24px', marginLeft: '0.05em', letterSpacing: '0.05em' }}></i>
+                  {fakeId}
                 </p>
               </div>
             </div>
             <div style={{ margin: '38px' }}>
               <p style={{ color: 'rgb(73, 73, 73)' }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nunc sapien, tincidunt sed commodo non, imperdiet sed ex. Aenean feugiat nulla id lobortis lobortis. Mauris ullamcorper erat ut sem consectetur, eu rhoncus odio mollis...
+                {props.jobDesc}
               </p>
             </div>
           </div>
