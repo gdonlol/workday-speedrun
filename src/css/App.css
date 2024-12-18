@@ -205,3 +205,25 @@ a {
 .grey-text p {
   color: #494949;
 }
+
+.application-panel-container {
+  position: fixed;
+  background-color: #000000BB;
+  width: 100vw;
+  height: 100vh;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  padding: 32px;
+}
+
+.application-panel {
+  background-color: white;
+  padding: 32px;
+}
+
+.application-panel a {
+  width: 100%;
+  font-weight: 600;
+}

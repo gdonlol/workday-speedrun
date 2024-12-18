@@ -4,6 +4,7 @@ import { Menu } from './Menu'
 import { Joblist } from './Joblist'
 import { GameControl } from './GameControl'
 import { useEffect, useState } from 'react'
+import { Jobform } from './Jobform'
 
 function App() {
 
@@ -22,7 +23,6 @@ function App() {
       setBanner(jsonData.banner);
       setJobTitle(jsonData.jobTitle);
       setJobDesc(jsonData.jobDesc);
-      console.log(jsonData.jobTitle)
     }
     fetchJson();
   }, [])
@@ -42,7 +42,7 @@ function App() {
               jobDesc={jobDesc}
             />
           } />
-          <Route path="jobform" element={<p>SAHDKSAD</p>} />
+          <Route path="jobform" element={<Jobform />} />
         </Route>
 
       </Routes>

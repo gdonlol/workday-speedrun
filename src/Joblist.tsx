@@ -1,10 +1,27 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router';
 
 export const Joblist = (props: { pageColor: string, icon: string, banner: string, jobTitle: string, jobDesc: string }) => {
+
   const fakeId = (Math.random() * 100000).toFixed(0);
+  const [showPanel, setShowPanel] = useState(false);
+
   return (
-    <div>
+    <div style={{ position: "relative" }}>
+
+      {showPanel &&
+        <div className="application-panel-container flex flex-aic flex-jcc">
+          <div className="application-panel flex-col " style={{ gap: 22 }}>
+            <h1>Start your application</h1>
+            <p>{props.jobTitle}</p>
+            <Link to="/test" className="btn blue-btn flex flex-jcc" >Autofill with Resume</Link>
+            <Link to="/test" className="btn blue-btn flex flex-jcc" >Apply Manually</Link>
+            <Link to="/test" className="btn blue-btn flex flex-jcc" >Autofill with Resume</Link>
+          </div>
+        </div>
+      }
+
       <div className="flex-col flex-aic" style={{ padding: '0px 0px 32px' }}>
         <div style={{ backgroundColor: 'rgb(71, 131, 222)', width: '1225px', height: '300px' }}></div>
         <div style={{ backgroundColor: 'white', width: '1225px', padding: '24px', boxSizing: 'border-box' }}>
@@ -46,7 +63,7 @@ export const Joblist = (props: { pageColor: string, icon: string, banner: string
             </div>
             <div className="job-posting-card">
               <p><u>{props.jobTitle}</u></p>
-              <p><i className="fa fa-map-marker" style={{ marginLeft: '0.15em', letterSpacing: '0.15em' }}></i> 7 Locations</p>
+              <p><i className="fa fa-map-marker" style={{ marginLeft: '0.15em', letterSpacing: '0.15em' }}></i> Somewhere, Earth</p>
               <p><i className="fa fa-clock-o"></i> Posted 30+ Days Ago</p>
               <p style={{ margin: '0px' }}><small>{fakeId}</small></p>
             </div>
@@ -61,15 +78,18 @@ export const Joblist = (props: { pageColor: string, icon: string, banner: string
           <div style={{ flex: '1 1 0%', backgroundColor: 'white', height: '100vh' }}>
             <div style={{ maxWidth: '75%', margin: '38px' }}>
               <h1 style={{ fontSize: '24px', margin: '0px 0px 32px', color: 'rgb(51, 51, 51)' }}>2024 Intern Conversion - 2025 FT: Manager, Automation Engineering</h1>
-              <Link to="/game/jobform" className="btn blue-btn" style={{ fontWeight: '600', fontSize: '14px', paddingTop: '11px', paddingBottom: '13px', marginTop: '100px' }} href="/" data-discover="true">
+              <button
+                onClick={() => setShowPanel(old => !old)}
+                className="btn blue-btn"
+                style={{ fontWeight: '600', fontSize: '14px', paddingTop: '11px', paddingBottom: '13px' }} >
                 <span>Apply</span>
-              </Link>
+              </button>
             </div>
             <hr style={{ borderWidth: '0.5px medium medium', borderStyle: 'solid none none', borderColor: 'rgb(218, 222, 226)' }} />
             <div className="flex" style={{ margin: '38px', flex: '1 1 0%', justifyContent: 'space-between' }}>
               <div className="flex grey-text" style={{ flex: '1 1 0%', justifyContent: 'flex-start', gap: '8px' }}>
                 <p className="flex flex-aic" style={{ gap: '12px', alignSelf: 'flex-start', margin: '0px' }}>
-                  <i className="fa fa-map-marker grey-icon" style={{ fontSize: '24px' }}></i> Brampton, ON
+                  <i className="fa fa-map-marker grey-icon" style={{ fontSize: '24px' }}></i> Somewhere, Earth
                 </p>
               </div>
               <div className="flex-col grey-text" style={{ flex: '1 1 0%', justifyContent: 'flex-start', gap: '8px' }}>
