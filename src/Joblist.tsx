@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router';
 
@@ -12,12 +11,15 @@ export const Joblist = (props: { pageColor: string, icon: string, banner: string
 
       {showPanel &&
         <div className="application-panel-container flex flex-aic flex-jcc">
-          <div className="application-panel flex-col " style={{ gap: 22 }}>
+          <div className={`application-panel flex-col ${showPanel ? "zoom-in" : ""}`} style={{ gap: 22 }}>
+            <button onClick={() => { setShowPanel(old => !old) }}>✕</button>
             <h1>Start your application</h1>
             <p>{props.jobTitle}</p>
-            <Link to="/test" className="btn blue-btn flex flex-jcc" >Autofill with Resume</Link>
-            <Link to="/test" className="btn blue-btn flex flex-jcc" >Apply Manually</Link>
-            <Link to="/test" className="btn blue-btn flex flex-jcc" >Autofill with Resume</Link>
+            <Link to="../signin" className="btn blue-btn flex flex-jcc" >Autofill with Resume</Link>
+            <Link to="s../ignin" className="btn blue-btn flex flex-jcc" >Apply Manually</Link>
+            <hr />
+            <Link to="../signin" className="btn blue-btn flex flex-jcc" >Autofill with Resume</Link>
+            <hr />
           </div>
         </div>
       }

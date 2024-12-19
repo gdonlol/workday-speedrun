@@ -5,6 +5,7 @@ import { Joblist } from './Joblist'
 import { GameControl } from './GameControl'
 import { useEffect, useState } from 'react'
 import { Jobform } from './Jobform'
+import { Signin } from './Signin'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
             />
           } />
           <Route path="jobform" element={<Jobform />} />
+          <Route path="signin" element={<Signin />} />
         </Route>
 
       </Routes>
