@@ -1,0 +1,62 @@
+.text-input {
+  font-family: Roboto;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid #7b858f;
+  transition: border-color 0.5s ease, outline 0.5s ease;
+  padding: 0px 8px 0px 8px;
+  margin-bottom: 4px;
+  color: #494949;
+}
+
+.text-input:hover {
+  border-color: black;
+}
+
+.text-input:focus {
+  border-color: #7cabdc;
+  outline-color: #7cabdc;
+}
+
+label {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 18px 0px 4px 0px;
+  color: #494949;
+}
+
+.signin-panel .form-error li,
+.signin-panel .form-error p {
+  color: #f54242;
+  font-size: 12px;
+  margin: 0;
+}
+
+.signin-panel .form-error ul {
+  margin: 0;
+  padding: 0px 0px 0px 40px;
+  list-style-type: "- ";
+}
+
+.form-container {
+  background-color: white;
+  z-index: -1;
+  box-shadow: 0px 0px 10px #00000069;
+  width: 1025px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 48px 32px 32px 32px;
+}
+
+.form-container a {
+  color: #005cb9;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-container h2 {
+  font-weight: 400;
+  color: #333333;
+  font-size: 20px;
+}

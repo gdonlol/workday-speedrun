@@ -25,6 +25,7 @@ body {
 a {
   color: black;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .menu-container {
@@ -38,7 +39,7 @@ a {
 .btn {
   background: grey;
   border: 2px solid black;
-  padding: 8px 26px 8px 26px;
+  padding: 10px 28px 10px 28px;
   box-sizing: border-box;
   font-family: Roboto;
   border-radius: 99px;
@@ -50,11 +51,53 @@ a {
   color: white;
 }
 
-.green-btn {
-  background-color: #45d15f;
-  border-color: #7eed92;
+.red-btn {
+  background-color: #EB4034;
+  border-color: #eb4034;
   color: white;
 }
+
+.red-btn:hover {
+  background-color: white;
+  color: #eb4034;
+}
+
+
+.orange-btn {
+  background-color: #f56f42;
+  border-color: #f56f42;
+  color: white;
+}
+
+.orange-btn:hover {
+  background-color: white;
+  color: #f56f42;
+}
+
+
+.yellow-btn {
+  background-color: #F8A51B;
+  border-color: #F8A51B;
+  color: white;
+}
+
+.yellow-btn:hover {
+  background-color: white;
+  color: #F8A51B;
+}
+
+
+.green-btn {
+  background-color: #4F9F73;
+  border-color: #4F9F73;
+  color: white;
+}
+
+.green-btn:hover {
+  background-color: white;
+  color: #4F9F73;
+}
+
 
 .blue-btn {
   background-color: #137BD1;
@@ -65,6 +108,18 @@ a {
 .blue-btn:hover {
   background-color: white;
   color: #137BD1;
+}
+
+
+.purple-btn {
+  background-color: #9147FF;
+  border-color: #9147FF;
+  color: white;
+}
+
+.purple-btn:hover {
+  background-color: white;
+  color: #9147FF;
 }
 
 .navbar {
@@ -78,6 +133,7 @@ a {
   margin: 0;
   height: 89px;
   background-color: white;
+  position: static;
 }
 
 .navbar img {
@@ -151,7 +207,7 @@ a {
   border-radius: 8px;
   box-sizing: border-box;
   padding: 18px;
-  background-color: #F0F1F2;
+  background-color: #3b90d705;
 }
 
 .job-posting-card p {
@@ -251,4 +307,45 @@ a {
   to {
     transform: scale(1);
   }
+}
+
+.signin-panel-container {
+  border: 1px solid #ebebeb;
+  border-top: none;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.signin-panel {
+  border: 1px solid #acacac;
+  border-radius: 8px;
+  width: 41%;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.signin-panel h1 {
+  font-size: 20px;
+  margin-top: 0;
+  color: #333333;
+}
+
+.signin-panel p,
+.signin-panel li {
+  font-size: 14px;
+  color: #494949;
+}
+
+.signin-panel ul {
+  margin: 0;
+  padding: 0px 0px 0px 22px;
+}
+
+.signin-panel li {
+  margin-bottom: 4px;
+}
+
+.signin-panel a {
+  color: #1a7fe3;
+  font-size: 14px;
 }

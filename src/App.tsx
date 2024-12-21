@@ -1,19 +1,19 @@
+import './css/Forms.css'
 import './css/App.css'
 import { Routes, Route } from 'react-router'
 import { Menu } from './Menu'
-import { Joblist } from './Joblist'
-import { GameControl } from './GameControl'
+import { GameDisplay } from './GameDisplay'
 import { useEffect, useState } from 'react'
-import { Jobform } from './Jobform'
-import { Signin } from './Signin'
 
 function App() {
 
+  const [gameState, setGameState] = useState(3);
   const [pageColor, setPageColor] = useState("#000000");
   const [icon, setIcon] = useState("");
   const [banner, setBanner] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [jobDesc, setJobDesc] = useState("");
+  const [jobType, setJobType] = useState("");
 
   useEffect(() => {
     const fetchJson = async () => {
@@ -24,6 +24,7 @@ function App() {
       setBanner(jsonData.banner);
       setJobTitle(jsonData.jobTitle);
       setJobDesc(jsonData.jobDesc);
+      setJobType(jsonData.type);
     }
     fetchJson();
   }, [])
@@ -33,18 +34,18 @@ function App() {
       <Routes>
 
         <Route index element={<Menu />} />
-        <Route path="game" element={<GameControl />}>
-          <Route path="joblist" element={
-            <Joblist
-              pageColor={pageColor}
-              icon={icon}
-              banner={banner}
-              jobTitle={jobTitle}
-              jobDesc={jobDesc}
-            />
-          } />
-          <Route path="jobform" element={<Jobform />} />
-          <Route path="signin" element={<Signin />} />
+        <Route path="game" element={
+          <GameDisplay
+            gameState={gameState}
+            setGameState={setGameState}
+            pageColor={pageColor}
+            icon={icon}
+            banner={banner}
+            jobTitle={jobTitle}
+            jobDesc={jobDesc}
+            jobType={jobType}
+          />
+        }>
         </Route>
 
       </Routes>

@@ -1,9 +1,9 @@
 
-export const Navbar = (props: { name: string }) => {
+export const Navbar = (props: { pageColor: string, icon: string }) => {
   return (
-    <div className="navbar">
+    <div id="navbar" className="navbar" style={{ borderTopColor: props.pageColor }} >
       <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/walmart_logo_icon_170230.png" />
+        <img src={props.icon} />
         <b style={{ fontSize: 20 }}>Careers</b>
       </div>
 
